@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete.EntityFramework;
+using DataAccessLayer.Concrete.InMemory;
+using System;
 
 namespace ConsoleUI
 {
@@ -6,7 +9,11 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ProductManager productManager = new ProductManager(new EfProductDal()); // you can change this data access layer by PnP example InMemoryProductDal(), EfProductDal();
+            foreach (var product in productManager.GetAll())
+            {
+                Console.WriteLine(product.ProductName);
+            }
         }
     }
 }
