@@ -1,4 +1,4 @@
-﻿using Entities.Abstract;
+﻿using Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.Abstract
+namespace Core.DataAccess
 {
     public interface IEntityRepository<Type> where Type:class,IEntity,new() //generic constraint -- class meaning; it should declared with reference type                                                                    
     {                                                                       //generic constraint -- IEntity meaning; it should implement IEntity and it's inheritances
